@@ -63,11 +63,16 @@ class ViewController: UIViewController {
     var score: Int!
     var record: Int!
     var lives = 0
-
-
     
-   
- 
+    @IBOutlet weak var light1: UILabel!
+    @IBOutlet weak var light2: UILabel!
+    @IBOutlet weak var light3: UILabel!
+    @IBOutlet weak var light4: UILabel!
+    @IBOutlet weak var light5: UILabel!
+    @IBOutlet weak var light6: UILabel!
+    @IBOutlet weak var light7: UILabel!
+    @IBOutlet weak var light8: UILabel!
+    
     
   
     
@@ -92,6 +97,14 @@ class ViewController: UIViewController {
         let url3 = URL(fileURLWithPath: wrong)
         let levels = Bundle.main.path(forResource: "Level", ofType: "mp3")!
         let url4 = URL(fileURLWithPath: levels)
+        light1.isHidden = true
+        light2.isHidden = true
+        light3.isHidden = true
+        light4.isHidden = true
+        light5.isHidden = true
+        light6.isHidden = true
+        light7.isHidden = true
+        light8.isHidden = true
         
   
      
@@ -171,6 +184,17 @@ class ViewController: UIViewController {
             }
           
         
+            if(level < 9){
+                light1.isHidden = true
+                light2.isHidden = true
+                light3.isHidden = true
+                light4.isHidden = true
+                light5.isHidden = true
+                light6.isHidden = true
+                light7.isHidden = true
+                light8.isHidden = true
+            }
+            
             if(level > 8 && level < 17){
                 multiply = 1
                 levelGUI.image = UIImage(named: "Red.png")
@@ -181,6 +205,15 @@ class ViewController: UIViewController {
                 levelGUI.image = UIImage(named: "Orange.png")
                 background.image = UIImage(named: "Orange.png")
                 multiply = 2
+                light1.isHidden = false
+                light2.isHidden = false
+                light3.isHidden = false
+                light4.isHidden = false
+                light5.isHidden = false
+                light6.isHidden = false
+                light7.isHidden = false
+                light8.isHidden = false
+              
             }
             if(level > 24 && level < 33){
                 levelGUI.image = UIImage(named: "Yellow.png")
@@ -273,10 +306,12 @@ class ViewController: UIViewController {
             sender.setImage(UIImage(named: "LightOn.png"), for: UIControlState())
             button1 = 1
             currentCount += 1
+            light1.text = "1"
         } else {
             sender.setImage(UIImage(named: "LightOff.png"), for: UIControlState())
             button1 = 0
             currentCount -= 1
+            light1.text = "0"
         }
          message_lbl.text = ""
         var cCount = String(currentCount)
@@ -290,10 +325,12 @@ class ViewController: UIViewController {
             sender.setImage(UIImage(named: "LightOn.png"), for: UIControlState())
             button2 = 1
             currentCount += 2
+            light2.text = "1"
         } else {
             sender.setImage(UIImage(named: "LightOff.png"), for: UIControlState())
             button2 = 0
             currentCount -= 2
+            light2.text = "0"
         }
          message_lbl.text = ""
         var cCount = String(currentCount)
@@ -307,10 +344,12 @@ class ViewController: UIViewController {
             sender.setImage(UIImage(named: "LightOn.png"), for: UIControlState())
             button3 = 1
             currentCount += 4
+            light3.text = "1"
         } else {
             sender.setImage(UIImage(named: "LightOff.png"), for: UIControlState())
             button3 = 0
             currentCount -= 4
+            light3.text = "0"
         }
          message_lbl.text = ""
         var cCount = String(currentCount)
@@ -324,10 +363,12 @@ class ViewController: UIViewController {
             sender.setImage(UIImage(named: "LightOn.png"), for: UIControlState())
             button4 = 1
             currentCount += 8
+            light4.text = "1"
         } else {
             sender.setImage(UIImage(named: "LightOff.png"), for: UIControlState())
             button4 = 0
             currentCount -= 8
+            light4.text = "0"
         }
          message_lbl.text = ""
         var cCount = String(currentCount)
@@ -341,10 +382,12 @@ class ViewController: UIViewController {
             sender.setImage(UIImage(named: "LightOn.png"), for: UIControlState())
             button5 = 1
             currentCount += 16
+            light5.text = "1"
         } else {
             sender.setImage(UIImage(named: "LightOff.png"), for: UIControlState())
             button5 = 0
             currentCount -= 16
+            light5.text = "0"
         }
          message_lbl.text = ""
         var cCount = String(currentCount)
@@ -358,10 +401,12 @@ class ViewController: UIViewController {
             sender.setImage(UIImage(named: "LightOn.png"), for: UIControlState())
             button6 = 1
             currentCount += 32
+            light6.text = "1"
         } else {
             sender.setImage(UIImage(named: "LightOff.png"), for: UIControlState())
             button6 = 0
             currentCount -= 32
+            light6.text = "0"
         }
          message_lbl.text = ""
         var cCount = String(currentCount)
@@ -375,10 +420,12 @@ class ViewController: UIViewController {
             sender.setImage(UIImage(named: "LightOn.png"), for: UIControlState())
             button7 = 1
             currentCount += 64
+            light7.text = "1"
         } else {
             sender.setImage(UIImage(named: "LightOff.png"), for: UIControlState())
             button7 = 0
             currentCount -= 64
+            light7.text = "0"
         }
          message_lbl.text = ""
         var cCount = String(currentCount)
@@ -392,11 +439,13 @@ class ViewController: UIViewController {
             sender.setImage(UIImage(named: "LightOn.png"), for: UIControlState())
             button8 = 1
             currentCount += 128
+            light8.text = "1"
             
         } else {
             sender.setImage(UIImage(named: "LightOff.png"), for: UIControlState())
             button8 = 0
             currentCount -= 128
+            light8.text = "0"
             
         }
          message_lbl.text = ""
